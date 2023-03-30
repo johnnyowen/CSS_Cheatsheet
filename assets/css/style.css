@@ -1,0 +1,164 @@
+:root {
+    --comp: #f4e50a;
+    --light: #632fc5;
+    --reg: #0732f4;
+    --dark: #d88cfc;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.6rem;
+    line-height: 1.5;  
+    color: var(--reg);
+    background-color: var(--dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.625rem;
+    color: var(--comp);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+h1 {
+	/* 4rem = 40px (4 * 10px) */
+	font-size: 4rem;
+}
+
+h2 {
+	font-size: 3.5rem;
+}
+
+h3 {
+	font-size: 3rem;
+}
+
+h4 {
+	font-size: 2.5rem;
+}
+
+h5 {
+	font-size: 2rem;
+}
+
+h6 {
+	font-size: 1.5rem;
+}
+
+p {
+	margin-bottom: 1rem;
+}
+
+code {
+    font-family: 'Andale Mono WT', 'Andale Mono', Monaco, 'Courier New', Courier, monospace;
+}
+
+::selection {
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+header {
+    padding: 3rem;
+    text-align: center;
+}
+
+header h1 {
+    padding: 1rem 1.2rem
+}
+
+footer {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+main {
+    width: 96%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-container{
+    flex: 1 1 calc(100% / 3);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: flex-basis 500ms linear;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 2rem;
+    outline: 2px dashed var(--light);
+    outline-offset: -2px;
+    transition: all 0.5s ease-in-out;
+}
+
+#dotted {
+    outline: 3.5px dotted var(--light);
+}
+
+.card h2 {
+    position: relative;
+    margin: -4rem 0 1.5rem 0;
+    padding: .5rem 1rem;
+    border: 2px solid var(--light);
+    border-radius: 8px;
+    background-color: var(--dark);
+    transition: all 0.5s ease-in-out;
+}
+
+.card:hover,
+.card:hover h2 {
+    box-shadow: inset 0px 0px 8px var(--comp), 0 0 15px var(--comp);
+}
+
+.card pre {
+    /* set styles to make it so code wraps in <pre> instead of overflowing */
+    white-space: pre-wrap;
+    overflow: auto;
+    tab-size: 4;
+    /* linear gradient */
+    background-image: linear-gradient(
+        rgb(180, 0, 255, 0.3) 0%,
+        rgb(255, 255, 0, 0.6) 100%
+        /* rgb(216, 140, 252, 0.6) 100% */
+    );
+    color: var(--light);
+    border-radius: 8px;
+    padding: 1.2rem 1rem;
+    /* each card's code block grows to occupy all the available space */
+    display: flex;
+    flex-grow: 1;
+}
+
+.card pre:active {
+    user-select: all;
+}
+
+@media screen and (max-width: 996px) {
+    .card-container {
+        flex-basis: 50%;
+    }
+  }
+
+@media screen and (max-width: 768px) {
+   .card-container {
+      flex-basis: 100%;
+    }
+  }
+  
+.egg:after{
+    content: '❤️';
+}
+
+.egg:hover:after {
+    content: "🎂";
+}
